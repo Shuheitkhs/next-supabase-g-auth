@@ -23,7 +23,7 @@ export default function RootLayout({
           <main className={inter.className}>{children}</main>
           <footer className="py-5">
             <div className="text-center text-sm">
-              Copyright © All rights reserved | Shuhei Takahashi
+              Copyright © All rights reserved | Shuhei Takahashi💪
             </div>
           </footer>
         </div>
