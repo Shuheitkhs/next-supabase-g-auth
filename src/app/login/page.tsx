@@ -1,8 +1,8 @@
-import { cookies } from "next/headers";
-import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
-import { redirect } from "next/navigation";
-import type { Database } from "@/lib/database.types";
-import Login from "@/components/login";
+import { cookies } from 'next/headers';
+import { createServerComponentClient } from '@supabase/auth-helpers-nextjs';
+import { redirect } from 'next/navigation';
+import type { Database } from '@/lib/database.types';
+import Login from '@/components/login';
 
 // ログインページ
 const LoginPage = async () => {
@@ -17,7 +17,7 @@ const LoginPage = async () => {
 
   // 認証している場合、リダイレクト
   if (session) {
-    redirect("/");
+    redirect('/');
   }
 
   return <Login />;
