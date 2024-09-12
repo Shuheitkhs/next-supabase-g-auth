@@ -14,22 +14,22 @@ const subNavigation = [
   {
     name: "プロフィール",
     icon: UserCircleIcon,
-    href: "/settings/profile",
+    href: "/setting/profile",
   },
   {
     name: "メールアドレス",
     icon: EnvelopeIcon,
-    href: "/settings/email",
+    href: "/setting/email",
   },
   {
     name: "パスワード",
     icon: KeyIcon,
-    href: "/settings/password",
+    href: "/setting/password",
   },
   {
     name: "ログアウト",
     icon: ArrowLeftOnRectangleIcon,
-    href: "/settings/logout",
+    href: "/setting/logout",
   },
 ];
 
@@ -38,7 +38,7 @@ const SettingsLayout = ({ children }: { children: React.ReactNode }) => {
   const pathname = usePathname();
 
   return (
-    <div className="grid grid-cols-3 gap-3">
+    <div className="grid grid-cols-3 gap-3 m-3">
       <div className="col-span-1 text-sm space-y-1 font-bold flex flex-col">
         {subNavigation.map((item, index) => (
           <Link href={item.href} key={index}>
@@ -53,7 +53,7 @@ const SettingsLayout = ({ children }: { children: React.ReactNode }) => {
           </Link>
         ))}
       </div>
-      <div className="col-span-2">{children}</div>
+      <div className="col-span-2 m-3">{children}</div>
     </div>
   );
 };

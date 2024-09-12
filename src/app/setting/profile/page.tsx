@@ -1,6 +1,7 @@
 import { cookies } from "next/headers";
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import { redirect } from "next/navigation";
+import type { Session } from "@supabase/auth-helpers-nextjs";
 
 import type { Database } from "@/lib/database.types";
 import Profile from "@/components/profile";
@@ -15,10 +16,10 @@ const ProfilePage = async () => {
     data: { session },
   } = await supabase.auth.getSession();
 
-  // 未認証の場合、リダイレクト
-  if (!session) {
-    redirect("/auth/login");
-  }
+  // 未認証の場合、リダイレクト・一旦コメントアウト化
+  // if (!session) {
+  //   redirect("/auth/login");
+  // }
 
   return <Profile />;
 };
