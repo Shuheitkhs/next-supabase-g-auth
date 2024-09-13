@@ -9,6 +9,7 @@ const LogoutPage = async () => {
   /**
    * TODO: 以下の理由によりコメントアウトしておきます！
    * createServerComponentClientは使わない方が良い
+   * リダイレクト先のパスは正しくは"/login"ですかね？
    * ログイン状態でない場合のリダイレクト処理はログアウトページだけでなく、全てのページで共通の処理なので、共通化した方が良い
    */
   // const supabase = createServerComponentClient<Database>({
