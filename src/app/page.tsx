@@ -1,3 +1,4 @@
+import { Top } from "@/components/top";
 import { createClient } from "@/utils/supabase/server";
 
 // メインページ
@@ -10,15 +11,19 @@ const Home = async () => {
   /**
    *  supabase.auth.getSession()を使用して、現在のユーザーのログイン情報の取得
    */
-  const { data: session } = await supabase.auth.getSession();
-  console.log(session);
+  const {
+    data: { session },
+  } = await supabase.auth.getSession();
   return (
     /**
      *  三項演算子でログインの有無により、ページの出し分け
      */
-    <div className="text-center text-xl">
-      {session ? <div>ログイン済だよ</div> : <div>未ログインだよ</div>}
-    </div>
+    /**
+     * TODO:
+     * このコンポーネントはサーバーコンポーネントなので、デフォルトでは動的にUIを変更することはできません
+     * そのため、クライアントコンポーネントの使用を検討すると良いですね
+     */
+    <Top session={session} />
   );
 };
 

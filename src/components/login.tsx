@@ -81,7 +81,8 @@ const Login = () => {
         return;
       }
 
-      router.push('/'); // ここもリダイレクト処理があるか確認
+      // TODO: src/app/auth/callback/route.tsでログイン後のリダイレクト処理があるので不要ですね
+      // router.push('/'); // ここもリダイレクト処理があるか確認
     } catch (error) {
       setMessage('エラーが発生しました。' + error);
     } finally {
